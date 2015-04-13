@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "ActiveRecord::Base models" do
+describe "ActiveRecord::Base models", :type => :model  do
   ActiveRecord::Base.descendants.map(&:to_s).reject() { |m| %w(ActiveAdmin::Comment AdminUser I18n::Backend::ActiveRecord::Translation).include?(m) }.each do |model_name|
     model = model_name.constantize
     describe model do
@@ -25,7 +25,7 @@ describe "ActiveRecord::Base models" do
 
       it "should save with valid attributes" do
         instance = FactoryGirl.create(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
-        instance.save.should be_true
+        instance.save.should be_truthy
         instance.should be_persisted
       end
     end

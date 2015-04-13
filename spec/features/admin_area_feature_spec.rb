@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'admin area' do
+feature 'admin area', :type => :feature do
   include ActiveAdmin::SignInHelper
 
   describe 'home page access' do

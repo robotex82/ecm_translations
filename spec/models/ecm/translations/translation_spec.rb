@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Ecm::Translations::Translation do
+describe Ecm::Translations::Translation, :type => :model  do
   describe 'validations' do
     it { should validate_presence_of :locale }
     it { should validate_presence_of :key }
