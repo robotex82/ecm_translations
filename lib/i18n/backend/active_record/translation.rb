@@ -74,7 +74,11 @@ module I18n
 
           def available_locales
             #Translation.distinct(:locale).map { |t| t.locale.to_sym }
-            Translation.pluck(:locale).uniq.map { |l| l.to_sym }
+            if Translation.table_exists?
+              Translation.pluck(:locale).uniq.map { |l| l.to_sym }
+            else
+              []
+            end
           end
         end
 

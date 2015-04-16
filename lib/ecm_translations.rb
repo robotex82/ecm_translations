@@ -1,5 +1,5 @@
-require 'i18n/active_record'
-require 'i18n/backend/active_record/translation'
+#require 'i18n/active_record'
+#require 'i18n/backend/active_record/translation'
 
 require 'ecm/translations/engine'
 require 'ecm/translations/configuration'
